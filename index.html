@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Место</title>
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="лого" />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img class="profile__avatar" src="./images/kusto.png" alt="кусто" />
+          <div class="info">
+            <h1 class="info__name">Жак-Ив Кусто</h1>
+            <p class="info__career">Исследователь океана</p>
+            <button type="button" class="info__edit"></button>
+          </div>
+          <button type="button" class="profile__add"></button>
+        </section>
+        <section class="elements">
+          <div class="element">
+            <img
+              class="element__gora"
+              src="./images/karachaevsk.jpg"
+              alt="карачаевск"
+            />
+            <h2 class="element__title">Карачаевск</h2>
+            <button
+              type="button"
+              class="element__like element__like_active"
+            ></button>
+          </div>
+          <div class="element">
+            <img
+              class="element__gora"
+              src="./images/elbrus.jpg"
+              alt="эльбрус"
+            />
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button
+              type="button"
+              class="element__like element__like_active"
+            ></button>
+          </div>
+          <div class="element">
+            <img class="element__gora" src="./images/dombai.jpg" alt="домбай" />
+            <h2 class="element__title">Домбай</h2>
+            <button
+              type="button"
+              class="element__like element__like_active"
+            ></button>
+          </div>
+          <div class="element">
+            <img
+              class="element__gora"
+              src="./images/elbrus.jpg"
+              alt="эльбрус"
+            />
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button
+              type="button"
+              class="element__like element__like_active"
+            ></button>
+          </div>
+          <div class="element">
+            <img class="element__gora" src="./images/dombai.jpg" alt="домбай" />
+            <h2 class="element__title">Домбай</h2>
+            <button
+              type="button"
+              class="element__like element__like_active"
+            ></button>
+          </div>
+          <div class="element">
+            <img
+              class="element__gora"
+              src="./images/karachaevsk.jpg"
+              alt="карачаевск"
+            />
+            <h2 class="element__title">Карачаево-Черкесия</h2>
+            <button
+              type="button"
+              class="element__like element__like_active"
+            ></button>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__title">&copy;2023 Андрей Пышнограй</p>
+      </footer>
+      <section class="popup">
+        <div class="popup__container">
+          <button type="button" class="popup__close-button"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form name="popupForm" class="form">
+            <input
+              type="text"
+              name="form-name"
+              class="form__name"
+              value=""
+            />
+            <input
+              type="text"
+              name="form-career"
+              class="form__career"
+              value=""
+            />
+            <button type="submit" name="form-save" class="form__save">
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
