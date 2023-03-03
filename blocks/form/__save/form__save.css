@@ -3,32 +3,33 @@
   padding: 0;
   width: 358px;
   min-height: 50px;
-  margin-top: 48px;
+  margin-top: 45px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 37px;
   background: #000000;
   border-radius: 2px;
   cursor: pointer;
-
+  border: none;
   font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    color: #ffffff;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
 }
 
 .form__save:hover {
-  opacity: .8;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .form__save {
     width: 238px;
     min-height: 46px;
-    margin-top: 45px;
+    margin-top: 40px;
     margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }

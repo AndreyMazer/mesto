@@ -1,6 +1,6 @@
 .element__like {
   margin: 30px 20px 31px auto;
-  background-color: rgba(256, 256, 256, 0);
+  background-color: rgba(256, 256, 256, 255);
   grid-area: like;
   background-image: url(../../../images/loys.svg);
   background-repeat: no-repeat;

@@ -9,7 +9,7 @@
   display: grid;
   grid-template-areas: 
   'name edit'
-  'career career';
+  'career';
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
