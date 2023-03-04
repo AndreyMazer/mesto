@@ -1,9 +1,7 @@
 const infoEdit = document.querySelector(".info__edit");
 const popup = document.querySelector(".popup");
-let nameUser = "Жак-ив Кусто";
-let careerUser = "Исследователь океана";
-const careerUserForm = document.querySelector(".form__career");
-const nameUserForm = document.querySelector(".form__name");
+const careerUserForm = document.querySelector(".popup__input_type_career");
+const nameUserForm = document.querySelector(".popup__input_type_name");
 const careerElement = document.querySelector(".info__career");
 const nameElement = document.querySelector(".info__name");
 const closePopup = document.querySelector(".popup__close-button");
@@ -11,8 +9,8 @@ let formElement = document.querySelector(".form");
 
 infoEdit.addEventListener("click", function () {
   popup.classList.add("popup_opened");
-  nameUserForm.value = nameUser;
-  careerUserForm.value = careerUser;
+  nameUserForm.value = nameElement.textContent;
+  careerUserForm.value = careerElement.textContent;
 });
 
 function popupClose() {
