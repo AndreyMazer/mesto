@@ -27,8 +27,7 @@
   .info__name {
     margin-left: auto;
     margin-right: auto;
-    min-width: 189px;
-    /*max-height: 26px;*/
+    width: 189px;
     text-align: center;
     font-size: 27px;
     line-height: 33px;
