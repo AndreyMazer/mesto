@@ -50,26 +50,32 @@ const initialCards = [
   {
     name: "Архыз",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+    alt: "Архыз",
   },
   {
     name: "Челябинская область",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+    alt: "Челябинская область",
   },
   {
     name: "Иваново",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+    alt: "Иваново",
   },
   {
     name: "Камчатка",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+    alt: "Камчатка",
   },
   {
     name: "Холмогорский район",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+    alt: "Холмогорский район",
   },
   {
     name: "Байкал",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+    alt: "Байкал",
   },
 ];
 
@@ -97,17 +103,20 @@ function createCard(card) {
   cardTitle.textContent = card.name;
   const cardImage = newCard.querySelector(".element__gora");
   cardImage.setAttribute("src", card.link);
+  cardImage.setAttribute("alt", card.alt);
   const deleteButton = newCard.querySelector(".element__delete");
   deleteButton.addEventListener("click", deleteButtonClick);
   const likeButton = newCard.querySelector(".element__like");
   likeButton.addEventListener("click", likeButtonClick);
+  const popupBigOpen = newCard.querySelector(".element__gora")
+ popupBigOpen.addEventListener("click", openBigPopup)
   return newCard;
 }
 
 function renderCard(card) {
   const newCard = createCard(card);
   elements.prepend(newCard);
-}
+}``
 
 function handleFormPicSubmit(evt) {
   evt.preventDefault();
@@ -127,8 +136,23 @@ initialCards.forEach((card) => {
   renderCard(card);
 });
 
-function deleteButtonLast(evt) {
-  const lastbutton = evt.target;
-  const pic = lastbutton.closest(".element");
-  pic.pop();
+
+
+const popupBig = document.querySelector(".popup-big");
+const popupBigClose = document.querySelector(".popup-big__close-button");
+
+  function closeBigPopup() {
+  popupBig.classList.remove("popup-big_opened");
+}
+
+popupBigClose.addEventListener("click", function () {
+  closeBigPopup();
+});
+
+function openBigPopup (evt) { 
+const popupBigPicture = document.querySelector(".popup-big__picture");
+const popupBigTitle = document.querySelector(".popup-big__title")
+popupBigPicture.src = evt.target.src
+popupBigTitle.textContent = evt.target.alt
+popupBig.classList.add("popup-big_opened");
 }
