@@ -1,4 +1,4 @@
-const infoEdit = document.querySelector(".info__edit");
+const buttonOpenEditProfilePopup = document.querySelector(".info__edit");
 const popupInfo = document.querySelector(".popup_info");
 const careerUserForm = document.querySelector(".popup__input_type_career");
 const nameUserForm = document.querySelector(".popup__input_type_name");
@@ -8,19 +8,19 @@ const popupClose = document.querySelectorAll(".popup__close-button");
 const formElement = document.querySelector(".form");
 const popupBig = document.querySelector(".popup_big");
 const popupPic = document.querySelector(".popup_pic");
-const picAdd = document.querySelector(".profile__add");
+const buttonOpenAddCardPopup = document.querySelector(".profile__add");
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
 }
 
-infoEdit.addEventListener("click", function () {
+buttonOpenEditProfilePopup.addEventListener("click", function () {
   openPopup(popupInfo);
   nameUserForm = nameElement.textContent;
   careerUserForm = careerElement.textContent;
 });
 
-picAdd.addEventListener("click", function () {
+buttonOpenAddCardPopup.addEventListener("click", function () {
   openPopup(popupPic);
 });
 
