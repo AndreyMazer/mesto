@@ -35,7 +35,7 @@
       <footer class="footer">
         <p class="footer__title">&copy;2023 Андрей Пышнограй</p>
       </footer>
-      <div class="popup">
+      <div class="popup popup_info">
         <div class="popup__container">
           <button type="button" class="popup__close-button"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
@@ -44,12 +44,14 @@
               type="text"
               name="form-name"
               class="popup__input popup__input_type_name"
+              placeholder="Имя"
               value=""
             />
             <input
               type="text"
               name="form-career"
               class="popup__input popup__input_type_career"
+              placeholder="Вид деятельности"
               value=""
             />
             <button type="submit" name="form-save" class="popup__save">
@@ -58,36 +60,39 @@
           </form>
         </div>
       </div>
-      <div class="popup-pic">
-        <div class="popup-pic__container">
-          <button type="button" class="popup-pic__close-button"></button>
-          <h2 class="popup-pic__title">Новое место</h2>
-          <form name="popupForm" class="form-place">
+      <div class="popup popup_pic">
+        <div class="popup__container">
+          <button type="button" class="popup__close-button"></button>
+          <h2 class="popup__title popup__title_pic">Новое место</h2>
+          <form name="popupForm" class="form form_place">
             <input
               type="text"
               name="form-name"
-              class="popup-pic__input popup-pic__input_type_place-name"
+              class="popup__input popup__input_pic_place-name"
               placeholder="Название"
               value=""
             />
             <input
               type="text"
               name="form-career"
-              class="popup-pic__input popup-pic__input_type_place-link"
+              class="popup__input popup__input_pic_place-link"
               placeholder="Ссылка на картинку"
               value=""
             />
-            <button type="submit" name="form-save" class="popup-pic__save">
+            <button type="submit" name="form-save" class="popup__save">
               Создать
             </button>
           </form>
         </div>
       </div>
-      <div class="popup-big">
-        <div class="popup-big__container">
-          <img class="popup-big__picture" />
-          <button type="button" class="popup-big__close-button"></button>
-          <h2 class="popup-big__title"></h2>
+      <div class="popup popup_big">
+        <div class="popup__container-big">
+          <img class="popup__picture popup__picture_big" />
+          <button
+            type="button"
+            class="popup__close-button popup__close-button_big"
+          ></button>
+          <h2 class="popup__title-big"></h2>
         </div>
       </div>
     </div>
