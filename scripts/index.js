@@ -28,10 +28,6 @@ function closePopup(popup) {
   popup.classList.remove("popup_opened");
 }
 
-closePopup(popupInfo);
-closePopup(popupPic);
-closePopup(popupBig);
-
 popupClose.forEach(function (closeBbutton) {
   const popup = closeBbutton.closest(".popup");
   closeBbutton.addEventListener("click", function () {
