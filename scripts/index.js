@@ -9,10 +9,35 @@ const buttonsClosePopup = document.querySelectorAll(".popup__close-button");
 const popupBig = document.querySelector(".popup_big");
 const popupPic = document.querySelector(".popup_pic");
 const buttonOpenAddCardPopup = document.querySelector(".profile__add");
+const everyPopup = document.querySelectorAll(".popup");
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closeEsc);
 }
+
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closeEsc);
+}
+
+function closeEsc(evt) {
+  if (evt.key === "Escape") {
+    const btnEsc = document.querySelector(".popup_opened");
+    closePopup(btnEsc);
+  }
+}
+
+everyPopup.forEach(function (popup) {
+  popup.addEventListener("click", function (evt) {
+    if (evt.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains("popup__close-button")) {
+      closePopup(popup);
+    }
+  });
+});
 
 buttonOpenEditProfilePopup.addEventListener("click", function () {
   openPopup(popupInfo);
@@ -24,10 +49,6 @@ buttonOpenAddCardPopup.addEventListener("click", function () {
   openPopup(popupPic);
   formAddCard.reset();
 });
-
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-}
 
 buttonsClosePopup.forEach(function (closeBbutton) {
   const popup = closeBbutton.closest(".popup");
