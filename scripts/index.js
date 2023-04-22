@@ -1,26 +1,41 @@
 const buttonOpenEditProfilePopup = document.querySelector(".info__edit");
-const popupInfo = document.querySelector(".popup_info");
-const formEditProfile = document.querySelector(".form");
-const careerUserForm = document.querySelector(".popup__input_type_career");
-const nameUserForm = document.querySelector(".popup__input_type_name");
 const careerElement = document.querySelector(".info__career");
 const nameElement = document.querySelector(".info__name");
 const buttonsClosePopup = document.querySelectorAll(".popup__close-button");
-const popupBig = document.querySelector(".popup_big");
-const popupPic = document.querySelector(".popup_pic");
 const buttonOpenAddCardPopup = document.querySelector(".profile__add");
-const everyPopup = document.querySelectorAll(".popup");
 
+//попапы
+const everyPopup = document.querySelectorAll(".popup");
+const popupBig = document.querySelector("#popupBigCard");
+const popupPic = document.querySelector("#popupCard-PlaceADD");
+const popupInfo = document.querySelector("#popupProfileEdit");
+
+//формы
+const formEditProfile = document.querySelector("#formProfileEdit");
+const formAddCard = document.querySelector("#formPlace-cardAdd");
+
+//инпуты
+const careerUserForm = document.querySelector(".popup__input_type_career");
+const nameUserForm = document.querySelector(".popup__input_type_name");
+const inputCardName = document.querySelector(".popup__input_type_place-name");
+const inputCardLink = document.querySelector(".popup__input_type_place-link");
+
+//открыть попап
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  submitBtn = popup.querySelector(".popup__save");
+  submitBtn.classList.add("popup__save_disabled");
+  submitBtn.disabled = true;
   document.addEventListener("keydown", closeEsc);
 }
 
+//закрыть попап
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closeEsc);
 }
 
+//закрыть попап на esc
 function closeEsc(evt) {
   if (evt.key === "Escape") {
     const btnEsc = document.querySelector(".popup_opened");
@@ -28,6 +43,7 @@ function closeEsc(evt) {
   }
 }
 
+//закрыть попап оверлэй
 everyPopup.forEach(function (popup) {
   popup.addEventListener("click", function (evt) {
     if (evt.target.classList.contains("popup_opened")) {
@@ -39,6 +55,7 @@ everyPopup.forEach(function (popup) {
   });
 });
 
+//кнопки открытия попапов
 buttonOpenEditProfilePopup.addEventListener("click", function () {
   openPopup(popupInfo);
   nameUserForm.value = nameElement.textContent;
@@ -50,6 +67,7 @@ buttonOpenAddCardPopup.addEventListener("click", function () {
   formAddCard.reset();
 });
 
+//кнопка закрытия попапа
 buttonsClosePopup.forEach(function (closeBbutton) {
   const popup = closeBbutton.closest(".popup");
   closeBbutton.addEventListener("click", function () {
@@ -57,6 +75,7 @@ buttonsClosePopup.forEach(function (closeBbutton) {
   });
 });
 
+//сохранение попапа
 function submitFormEditProfile(evt) {
   evt.preventDefault();
   nameElement.textContent = nameUserForm.value;
@@ -66,6 +85,7 @@ function submitFormEditProfile(evt) {
 
 formEditProfile.addEventListener("submit", submitFormEditProfile);
 
+//картинки
 const initialCards = [
   {
     name: "Архыз",
@@ -100,21 +120,21 @@ const initialCards = [
 ];
 
 const elements = document.querySelector(".elements");
-const formAddCard = document.querySelector(".form_place");
-const inputCardName = document.querySelector(".popup__input_pic_place-name");
-const inputCardLink = document.querySelector(".popup__input_pic_place-link");
 
+//мусорка
 function deleteButtonClick(evt) {
   const btnDlt = evt.target;
   const picDlt = btnDlt.closest(".element");
   picDlt.remove();
 }
 
+//лойс
 function likeButtonClick(evt) {
   const btnLike = evt.target;
   btnLike.classList.toggle("element__like_active");
 }
 
+//добавить картинку
 function createCard(card) {
   const newCard = document.querySelector(".template").content.cloneNode(true);
   const cardTitle = newCard.querySelector(".element__title");
@@ -154,6 +174,7 @@ initialCards.forEach((card) => {
   renderCard(card);
 });
 
+//увеличение картинки
 const popupBigPicture = popupBig.querySelector(".popup__picture_big");
 const popupBigTitle = popupBig.querySelector(".popup__title-big");
 
