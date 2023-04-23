@@ -15,17 +15,14 @@ const formEditProfile = document.querySelector("#formProfileEdit");
 const formAddCard = document.querySelector("#formPlace-cardAdd");
 
 //инпуты
-const careerUserForm = document.querySelector(".popup__input_type_career");
-const nameUserForm = document.querySelector(".popup__input_type_name");
+const inputCareerUserForm = document.querySelector(".popup__input_type_career");
+const inputNameUserForm = document.querySelector(".popup__input_type_name");
 const inputCardName = document.querySelector(".popup__input_type_place-name");
 const inputCardLink = document.querySelector(".popup__input_type_place-link");
 
 //открыть попап
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  submitBtn = popup.querySelector(".popup__save");
-  submitBtn.classList.add("popup__save_disabled");
-  submitBtn.disabled = true;
   document.addEventListener("keydown", closeEsc);
 }
 
@@ -55,31 +52,32 @@ everyPopup.forEach(function (popup) {
   });
 });
 
+//неактивная кнопка submit
+function disableBtnForm(popup) {
+  submitBtn = popup.querySelector(".popup__save");
+  submitBtn.classList.add("popup__save_disabled");
+  submitBtn.disabled = true;
+}
+
 //кнопки открытия попапов
 buttonOpenEditProfilePopup.addEventListener("click", function () {
   openPopup(popupInfo);
-  nameUserForm.value = nameElement.textContent;
-  careerUserForm.value = careerElement.textContent;
+  disableBtnForm(popupInfo);
+  inputNameUserForm.value = nameElement.textContent;
+  inputCareerUserForm.value = careerElement.textContent;
 });
 
 buttonOpenAddCardPopup.addEventListener("click", function () {
   openPopup(popupPic);
+  disableBtnForm(popupPic);
   formAddCard.reset();
-});
-
-//кнопка закрытия попапа
-buttonsClosePopup.forEach(function (closeBbutton) {
-  const popup = closeBbutton.closest(".popup");
-  closeBbutton.addEventListener("click", function () {
-    closePopup(popup);
-  });
 });
 
 //сохранение попапа
 function submitFormEditProfile(evt) {
   evt.preventDefault();
-  nameElement.textContent = nameUserForm.value;
-  careerElement.textContent = careerUserForm.value;
+  nameElement.textContent = inputNameUserForm.value;
+  careerElement.textContent = inputCareerUserForm.value;
   closePopup(popupInfo);
 }
 
@@ -160,7 +158,7 @@ function renderCard(card) {
 function handleFormPicSubmit(evt) {
   evt.preventDefault();
   const card = {
-    name: inputCardName.value,
+    alt: inputCardName.value,
     link: inputCardLink.value,
   };
   renderCard(card);
