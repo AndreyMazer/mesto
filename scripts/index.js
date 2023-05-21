@@ -1,10 +1,9 @@
 import { FormValidator } from "./FormValidator.js";
-import { Card } from "./Сard.js";
+import { Card } from "./Card.js";
 
 const buttonOpenEditProfilePopup = document.querySelector(".info__edit");
 const careerElement = document.querySelector(".info__career");
 const nameElement = document.querySelector(".info__name");
-const buttonsClosePopup = document.querySelectorAll(".popup__close-button");
 const buttonOpenAddCardPopup = document.querySelector(".profile__add");
 
 //попапы
@@ -55,23 +54,17 @@ everyPopup.forEach(function (popup) {
   });
 });
 
-//неактивная кнопка submit
-function disableBtnForm(popup) {
-  submitBtn = popup.querySelector(".popup__save");
-  submitBtn.classList.add("popup__save_disabled");
-  submitBtn.disabled = true;
-}
-
 //кнопки открытия попапов
 buttonOpenEditProfilePopup.addEventListener("click", function () {
   openPopup(popupInfo);
+  formValidations["popupFormProfile"].disableButton();
   inputNameUserForm.value = nameElement.textContent;
   inputCareerUserForm.value = careerElement.textContent;
 });
 
 buttonOpenAddCardPopup.addEventListener("click", function () {
   openPopup(popupPic);
-  disableBtnForm(popupPic);
+  formValidations["popupFormCardAdd"].disableButton();
   formAddCard.reset();
 });
 
@@ -112,7 +105,7 @@ const enableValidation = (validConfig) => {
 enableValidation(formConfig);
 
 //размещение карточек на странице
-const elements = document.querySelector(".elements");
+const elementsContainer = document.querySelector(".elements");
 
 function handleFormPicSubmit(evt) {
   evt.preventDefault();
@@ -123,7 +116,7 @@ function handleFormPicSubmit(evt) {
   };
   const newCard = new Card(card, ".template");
   const cardElement = newCard.generateCard();
-  elements.prepend(cardElement);
+  elementsContainer.prepend(cardElement);
   formAddCard.reset();
   closePopup(popupPic);
 }
@@ -134,7 +127,7 @@ formAddCard.addEventListener("submit", handleFormPicSubmit);
 initialCards.forEach((card) => {
   const newCard = new Card(card, ".template", handleOpenPopup);
   const cardElement = newCard.generateCard();
-  elements.prepend(cardElement);
+  elementsContainer.prepend(cardElement);
 });
 
 //большой попап
