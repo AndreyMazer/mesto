@@ -1,0 +1,19 @@
+{
+  "name": "yandex.praktikum",
+  "version": "1.0.0",
+  "description": "learning platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreyMazer/mesto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreyMazer/mesto/issues"
+  },
+  "homepage": "https://github.com/AndreyMazer/mesto#readme"
+}
