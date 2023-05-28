@@ -1,19 +1,26 @@
 {
-  "name": "yandex.praktikum",
+  "name": "mesto-main333",
   "version": "1.0.0",
-  "description": "learning platform",
+  "description": "learning",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndreyMazer/mesto.git"
   },
-  "author": "",
+  "keywords": [
+    "git@github.com:AndreyMazer/mesto.git"
+  ],
+  "author": "Andrey",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AndreyMazer/mesto/issues"
   },
-  "homepage": "https://github.com/AndreyMazer/mesto#readme"
+  "homepage": "https://github.com/AndreyMazer/mesto#readme",
+  "devDependencies": {
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  }
 }
