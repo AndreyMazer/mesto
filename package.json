@@ -1,0 +1,17 @@
+{
+  "name": "mesto-main333",
+  "version": "1.0.0",
+  "description": "* [Ссылка на проект в GitHub](https://andreymazer.github.io/mesto/index.html)\r ### Обзор",
+  "main": "index.js",
+  "scripts": {
+  "build": "rm -rf dist && webpack --mode production",
+  "dev": "webpack serve"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
