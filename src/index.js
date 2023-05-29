@@ -1,5 +1,7 @@
-import { FormValidator } from "./FormValidator.js";
-import { Card } from "./Card.js";
+//import '../pages/index.css';
+import {FormValidator} from "../scripts/FormValidator.js"
+import { Card } from "../scripts/Card.js";
+//import {initialCards} from "../scripts/InitialCards.js"
 
 const buttonOpenEditProfilePopup = document.querySelector(".info__edit");
 const careerElement = document.querySelector(".info__career");
