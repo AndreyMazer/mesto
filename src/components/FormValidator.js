@@ -15,12 +15,6 @@ export class FormValidator {
     );
   }
 
-  _getErrorTextElement(input) {
-    return (this._errorTextElement = this._formSelector.querySelector(
-      `${this._textErrorSelector}${input.name}`
-    ));
-  }
-
   _showInputError(input, errorTextElement, validationMessage) {
     input.classList.add(this._errorTemplateClass);
     errorTextElement.textContent = validationMessage;
@@ -36,6 +30,12 @@ export class FormValidator {
   disableButton() {
     this._submitButton.classList.add(this._disableButtonClass);
     this._submitButton.disabled = true;
+  }
+
+  _getErrorTextElement(input) {
+    return this._errorTextElement = this._formSelector.querySelector(
+      `${this._textErrorSelector}${input.name}`
+    );
   }
 
   _checkInputValidity(input) {
@@ -79,8 +79,9 @@ export class FormValidator {
 
   resetValidation() {
     this._inputList.forEach((input) => {
-      this._hideInputError(input);
-    });
+      const errorTextElement = this._getErrorTextElement(input);
+      this._hideInputError(input, errorTextElement);
     this.disableButton();
+  });
   }
 }

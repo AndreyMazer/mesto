@@ -107,10 +107,10 @@ buttonOpenEditProfilePopup.addEventListener("click", () => {
   userInfo.getUserInfo();
   inputNameUserForm.value = formName.textContent;
   inputCareerUserForm.value = formCareer.textContent;
-  formValidations[formEditProfile].close();
+  formValidations["popupFormProfile"].resetValidation();
 });
 
 buttonOpenAddCardPopup.addEventListener("click", () => {
   popupPic.open();
-  formValidations[formAddCard].close();
+  formValidations["popupFormCardAdd"].disableButton();
 });
