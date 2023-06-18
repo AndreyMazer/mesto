@@ -1,13 +1,16 @@
 {
   "name": "mesto-main333",
   "version": "1.0.0",
-  "description": "* [Ссылка на проект в GitHub](https://andreymazer.github.io/mesto/index.html)\r ### Обзор",
-  "main": "index.js",
+  "description": "Ссылка на проект в GitHub: https://andreymazer.github.io/mesto/index.html",
+  "main": "src/pages/index.js",
   "scripts": {
+    "start": "node src/pages/index.js",
     "build": "webpack --mode production",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
-  "keywords": [],
+  "keywords":[],
   "author": "",
   "license": "ISC",
   "devDependencies": {
