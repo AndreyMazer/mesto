@@ -1,5 +1,5 @@
-# Проект: Место
-* [Ссылка на проект в GitHub](https://andreymazer.github.io/mesto)
+# Проект: Местоmesto
+* [Ссылка на проект в GitHub](https://andreymazer.github.io/mesto/)
 ### Обзор
 
 **Данный проект - моя первая работа с JavaScript**
