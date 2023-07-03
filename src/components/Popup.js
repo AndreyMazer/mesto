@@ -3,7 +3,7 @@ export class Popup {
     this._popup = document.querySelector(popupSelector);
   }
 
-  _handleCloseEsc = (evt) => {
+  _handleCloseEsc(evt)  {
     if (evt.key === "Escape") this.close();
   };
 
