@@ -2,9 +2,8 @@
   "name": "mesto-main333",
   "version": "1.0.0",
   "description": "Ссылка на проект в GitHub: https://andreymazer.github.io/mesto/index.html",
-  "main": "src/pages/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/pages/index.js",
     "build": "webpack --mode production",
     "dev": "webpack serve",
     "predeploy": "npm run build",
@@ -23,13 +22,13 @@
     "cssnano": "^6.0.1",
     "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.1",
-    "mini-css-extract-plugin": "^2.7.6",
     "postcss-loader": "^7.3.2",
     "webpack": "^5.84.1",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
-    "core-js": "^2.6.12"
+    "core-js": "^2.6.12",
+    "mini-css-extract-plugin": "^2.7.6"
   }
 }
