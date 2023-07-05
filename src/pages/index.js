@@ -6,15 +6,15 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
 import { Section } from "../components/Section.js";
-import { Api } from "../components/Api.js";
+//import { Api } from "../components/Api.js";
 
-const api = new Api({
+/*const api = new Api({
     url: 'https://mesto.nomoreparties.co/v1/cohort-68',
     headers: {
         authorization: 'cb145c34-9cd1-4faa-809f-c18fc30df2d7',
         'Content-Type': "applycation/json"
     }
-})
+})*/
 
 //инпуты
 const inputCareerUserForm = document.querySelector(".popup__input_type_career");
