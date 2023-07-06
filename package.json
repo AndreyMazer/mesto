@@ -28,7 +28,7 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
-    "core-js": "^2.6.12",
+    "core-js": "^3.31.1",
     "mini-css-extract-plugin": "^2.7.6"
   }
 }
