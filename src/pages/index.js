@@ -6,6 +6,7 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
 import { Section } from "../components/Section.js";
+import { PopupWithAssent } from "../components/PopupWithAssent.js";
 //import { Api } from "../components/Api.js";
 
 /*const api = new Api({

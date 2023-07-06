@@ -129,6 +129,45 @@
           <h2 class="popup__title-big"></h2>
         </div>
       </div>
+      <div class="popup popup_avatar" id="popupAvatarEdit">
+        <div class="popup__container">
+          <button type="button" class="popup__close-button"></button>
+          <h2 class="popup__title">Обновить аватар</h2>
+          <form
+            name="popupFormAvatar"
+            class="form"
+            id="formProfileAvatar"
+            novalidate
+          >
+            <input
+              type="url"
+              name="avatar"
+              class="popup__input popup__input_type_avatar"
+              placeholder="Имя"
+              value=""
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span
+              class="popup__input-error popup__input-error_type_avatar"
+            ></span>
+            <button type="submit" name="form-save" class="popup__save">
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup_delete" id="popupDeleteCard">
+        <div class="popup__container">
+          <button type="button" class="popup__close-button"></button>
+          <h2 class="popup__title">Вы уверены?</h2>
+            <button type="submit" name="form-save" class="popup__save popup__save-delete">
+              Да
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
