@@ -18,7 +18,7 @@ export class UserInfo {
     this._career.textContent = career;
   }
 
-  setProfileAvatar(link) {
+  /*setProfileAvatar(link) {
         this._avatar.src = link;
-    }
+    }*/
 }
