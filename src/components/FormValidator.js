@@ -33,9 +33,9 @@ export class FormValidator {
   }
 
   _getErrorTextElement(input) {
-    return this._errorTextElement = this._formSelector.querySelector(
+    return (this._errorTextElement = this._formSelector.querySelector(
       `${this._textErrorSelector}${input.name}`
-    );
+    ));
   }
 
   _checkInputValidity(input) {
@@ -81,7 +81,7 @@ export class FormValidator {
     this._inputList.forEach((input) => {
       const errorTextElement = this._getErrorTextElement(input);
       this._hideInputError(input, errorTextElement);
-    this.disableButton();
-  });
+      this.disableButton();
+    });
   }
 }
