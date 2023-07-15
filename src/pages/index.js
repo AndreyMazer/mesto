@@ -107,6 +107,7 @@ function handlepopupPicFormSubmit(card) {
       .addCard(card)
       .then((res) => {
         section.addItem(res);
+        popupPic.close();
       })
 
       .catch((err) => {
@@ -130,6 +131,7 @@ function handleProfileFormSubmit(inputValues) {
       .editProfile(inputValues)
       .then((data) => {
         userInfo.setUserInfo(data);
+        popupInfo.close();
       })
       .catch((err) => {
         console.log("Ошибка:", err);
@@ -152,6 +154,7 @@ function handleAvatarFormSubmit(inputValues) {
       .editAvatar(inputValues.avatar)
       .then((data) => {
         userInfo.setAvatar(data.avatar);
+        popupAvatarEdit.close();
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
