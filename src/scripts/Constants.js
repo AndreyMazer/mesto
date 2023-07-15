@@ -1,17 +1,7 @@
-/*//инпуты
-const inputCareerUserForm = document.querySelector(".popup__input_type_career");
-const inputNameUserForm = document.querySelector(".popup__input_type_name");
-const inputCardName = document.querySelector(".popup__input_type_place-name");
-const inputCardLink = document.querySelector(".popup__input_type_place-link");
-
-//поля формы
-const formName = document.querySelector(".info__name");
-const formCareer = document.querySelector(".info__career");*/
-
 //кнопки
 const buttonOpenEditProfilePopup = document.querySelector(".info__edit");
 const buttonOpenAddCardPopup = document.querySelector(".profile__add");
-const buttonEditAvatar = document.querySelector(".profile__avatar_button");
+const buttonOpenEditAvatar = document.querySelector(".profile__avatar_button");
 
 //картинка
 const cardTemplate = document.querySelector(".template");
@@ -38,5 +28,5 @@ export {
   formAddCard,
   formConfig,
   formEditAvatar,
-  buttonEditAvatar,
+  buttonOpenEditAvatar,
 };

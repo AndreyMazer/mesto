@@ -1,5 +1,5 @@
 .element__like {
-  margin: 30px 20px 31px auto;
+  margin: 20px 20px 0 auto;
   background-color: transparent;
   grid-area: like;
   background-image: url(../../../images/loys.svg);

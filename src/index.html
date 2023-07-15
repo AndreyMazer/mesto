@@ -15,7 +15,7 @@
         <section class="profile">
           <img class="profile__avatar" src=<%=require("./images/kusto.png")%>
           alt="кусто"/>
-          <div class="profile__avatar_button"></div>
+          <button type="button" class="profile__avatar_button"></button>
           <div class="info">
             <h1 class="info__name">Жак-Ив Кусто</h1>
             <p class="info__career">Исследователь океана</p>
@@ -29,7 +29,7 @@
               <img class="element__gora" />
               <h2 class="element__title"></h2>
               <button type="button" class="element__like"></button>
-              <div class="element__like-counter"></div>
+              <span class="element__like-counter">0</span>
               <button type="button" class="element__delete"></button>
             </div>
           </template>
@@ -74,7 +74,7 @@
             <span
               class="popup__input-error popup__input-error_type_career"
             ></span>
-            <button type="submit" name="form-save" class="popup__save">
+            <button type="submit" class="popup__save popup__save_editProfile">
               Сохранить
             </button>
           </form>
@@ -92,8 +92,8 @@
           >
             <input
               type="text"
-              name="form-place"
-              class="popup__input popup__input_type_place-name"
+              name="place"
+              class="popup__input popup__input_type_place"
               placeholder="Название"
               value=""
               minlength="2"
@@ -101,20 +101,20 @@
               required
             />
             <span
-              class="popup__input-error popup__input-error_type_form-place"
+              class="popup__input-error popup__input-error_type_place"
             ></span>
             <input
               type="url"
-              name="form-link"
-              class="popup__input popup__input_type_place-link"
+              name="link"
+              class="popup__input popup__input_type_link"
               placeholder="Ссылка на картинку"
               value=""
               required
             />
             <span
-              class="popup__input-error popup__input-error_type_form-link"
+              class="popup__input-error popup__input-error_type_link"
             ></span>
-            <button type="submit" name="form-save" class="popup__save">
+            <button type="submit" class="popup__save popup__save_addCard">
               Создать
             </button>
           </form>
@@ -144,16 +144,16 @@
               type="url"
               name="avatar"
               class="popup__input popup__input_type_avatar"
-              placeholder="Имя"
+              placeholder="Ссылка на аватар"
               value=""
               minlength="2"
-              maxlength="40"
+              maxlength="200"
               required
             />
             <span
               class="popup__input-error popup__input-error_type_avatar"
             ></span>
-            <button type="submit" name="form-save" class="popup__save">
+            <button type="submit" class="popup__save popup__save_avatar">
               Сохранить
             </button>
           </form>
@@ -163,7 +163,8 @@
         <div class="popup__container">
           <button type="button" class="popup__close-button"></button>
           <h2 class="popup__title">Вы уверены?</h2>
-            <button type="submit" name="form-save" class="popup__save popup__save-delete">
+          <form name="popupDelete" class="form" id="formDelete">
+            <button type="submit" class="popup__save popup__save_delete">
               Да
             </button>
           </form>

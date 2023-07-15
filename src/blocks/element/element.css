@@ -9,6 +9,7 @@
   display: grid;
   grid-template-areas:
     "gora gora"
-    "title like";
+    "title like"
+    "title like-counter";
 }
 

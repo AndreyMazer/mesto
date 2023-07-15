@@ -11,6 +11,7 @@
   background-position: center;
   background-color: transparent;
   cursor: pointer;
+  visibility: visible;
 }
 
 .element__delete:hover {

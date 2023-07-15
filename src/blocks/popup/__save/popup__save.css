@@ -31,3 +31,7 @@
     line-height: 17px;
   }
 }
+
+.popup__save-delete {
+  margin-bottom: 40px;
+}

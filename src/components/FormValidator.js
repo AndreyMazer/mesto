@@ -9,7 +9,7 @@ export class FormValidator {
   }
 
   _findFormElements() {
-    this._inputList = this._formSelector.querySelectorAll(this._inputSelector);
+    this._inputList = Array.from(this._formSelector.querySelectorAll(this._inputSelector));
     this._submitButton = this._formSelector.querySelector(
       this._submitButtonSelector
     );
