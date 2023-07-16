@@ -5,7 +5,7 @@ export class Section {
   }
 
   addItem(element) {
-    this._containerSelector.prepend(element);
+    this._containerSelector.appendChild(element);
   }
 
   renderElements(items) {
@@ -13,4 +13,5 @@ export class Section {
       this._containerSelector.prepend(this._renderer(item));
     });
   }
+
 }

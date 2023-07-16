@@ -96,7 +96,7 @@ function handleFormSubmit(toDo, popupInstance, loadingText = "Сохраненя
 
 //попап добавления карточки
 const popupPic = new PopupWithForm(
-  "#popupCard-PlaceADD",
+ "#popupCard-PlaceADD",
   handlepopupPicFormSubmit
 );
 popupPic.setEventListeners();
@@ -109,7 +109,6 @@ function handlepopupPicFormSubmit(card) {
         section.addItem(res);
         popupPic.close();
       })
-
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
       });

@@ -24,7 +24,7 @@ export class Card {
 
     _finedDeleteButton() {
         if (this._ownerId !== this._userId) {
-            this._deleteButton.classList.remove('element__delete_active');
+            this._deleteButton.classList.add('element__delete_active');
         }
     }
 
@@ -92,7 +92,7 @@ export class Card {
         this._finedDeleteButton();
         this._finedLikeButton();
         this._addListeners();
-
+    
         return this._templateCard;
     }
 }
