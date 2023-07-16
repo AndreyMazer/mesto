@@ -5,11 +5,11 @@ export class Section {
   }
 
   addItem(element) {
-    this._containerSelector.appendChild(element);
+    this._containerSelector.prepend(element);
   }
 
   renderElements(items) {
-    items.forEach((item) => {
+    items.reverse().forEach((item) => {
       this._containerSelector.prepend(this._renderer(item));
     });
   }

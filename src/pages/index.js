@@ -106,7 +106,8 @@ function handlepopupPicFormSubmit(card) {
     return api
       .addCard(card)
       .then((res) => {
-        section.addItem(res);
+        const cardElement = createCard(res);
+        section.addItem(cardElement);
         popupPic.close();
       })
       .catch((err) => {

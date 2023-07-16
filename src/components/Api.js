@@ -52,13 +52,13 @@ export class Api {
     });
   }
 
-  addCard(card) {
+  addCard(data) {
     return this._toDo(`cards`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({
-        name: card.place,
-        link: card.link,
+        name: data.place,
+        link: data.link,
       }),
     });
   }
