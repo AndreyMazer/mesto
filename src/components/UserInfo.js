@@ -3,6 +3,7 @@ export class UserInfo {
     this._name = document.querySelector(nameId);
     this._career = document.querySelector(aboutId);
     this._avatar = document.querySelector(avatarId);
+    this._userId = null;
   };
 
   getUserInfo() {
@@ -18,6 +19,8 @@ export class UserInfo {
     return this._userId;
   }
 
+  
+  
   setUserInfo = ({name, about, avatar, _id}) => {
     this._name.textContent = name;
     this._career.textContent = about;

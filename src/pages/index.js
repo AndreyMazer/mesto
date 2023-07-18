@@ -36,9 +36,9 @@ const userInfo = new UserInfo({
 Promise.all([api.getProfile(), api.getInitialCards()])
   .then((res) => {
     const [data, cards] = res;
-    userInfo.setUserInfo({ name: data.name, about: data.about });
-    userInfo.setAvatar(data.avatar);
     section.renderElements(cards);
+    userInfo.setUserInfo({ name: data.name, about: data.about});
+    userInfo.setAvatar(data.avatar);
   })
   .catch((err) => {
     console.log(err);
@@ -56,7 +56,7 @@ function createCard(photoCard) {
     popupBig.open,
     handleLike,
     popupCardDelete.open,
-    userInfo.getUserId()
+    userInfo.getUserInfo()
   ).createCard(photoCard);
 }
 

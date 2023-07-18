@@ -4,7 +4,7 @@ export class Card {
     cardTemplate,
     openBigPopup,
     handleLike,
-    handleDeleteCard,
+    handleCardDelete,
     userId
   ) {
     this._photoCard = data;
@@ -14,7 +14,7 @@ export class Card {
     this._cardTemplate = cardTemplate;
     this._openBigPopup = openBigPopup;
     this._handleLike = handleLike;
-    this._handleDeleteCard = handleDeleteCard;
+    this._handleCardDelete = handleCardDelete;
     this._userId = userId;
     this._templateCard = this._finedElements();
     this._likesCounter = this._templateCard.querySelector(
@@ -34,8 +34,9 @@ export class Card {
   }
 
   _finedDeleteButton() {
-    if (this._ownerId == this._userId) {
-      this._deleteButton.classList.add("element__delete_active");
+    if (this._ownerId === this._userId) {
+      console.log(this._userId)
+      this._deleteButton.style = `display: none`; 
     }
   }
 
@@ -99,7 +100,7 @@ export class Card {
       }
     });
     this._deleteButton.addEventListener("click", () => {
-      this._handleDeleteCard(this._photoCardId, this._handleDeleteButtonClick);
+      this._handleCardDelete(this._photoCardId, this._handleDeleteButtonClick);
     });
     this._cardImage.addEventListener("click", () => {
       this._handleOpenBigPopup();
