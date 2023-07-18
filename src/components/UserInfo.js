@@ -3,14 +3,14 @@ export class UserInfo {
     this._name = document.querySelector(nameId);
     this._career = document.querySelector(aboutId);
     this._avatar = document.querySelector(avatarId);
-    this._userId = null;
+    //this._userId = null;
   };
 
   getUserInfo() {
     const userInfo = {
       name: this._name.textContent,
       career: this._career.textContent,
-      userId: this._userId
+      //userId: this._userId
     };
     return userInfo
   }
@@ -25,7 +25,7 @@ export class UserInfo {
     this._name.textContent = name;
     this._career.textContent = about;
     this.setAvatar(avatar);
-    this._userId = _id;
+    //this._userId = _id;
   }
 
   setAvatar(avatar)  {

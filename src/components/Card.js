@@ -34,9 +34,9 @@ export class Card {
   }
 
   _finedDeleteButton() {
-    if (this._ownerId === this._userId) {
+    if (this._ownerId !== this._userId) {
       console.log(this._userId)
-      this._deleteButton.style = `display: none`; 
+      this._deleteButton.classList.add("element__delete_active"); 
     }
   }
 
